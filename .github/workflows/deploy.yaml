@@ -1,0 +1,20 @@
+name: Compile and test
+on: [ "push" ]
+env: 
+  RAPID_API_KEY: ${{ secrets.rapid_api_key }}
+  S3_ACCESS_KEY : ${{ secrets.s3_access_key }}
+  S3_SECRET_KEY : ${{ secrets.s3_secret_key }}
+  SPRING_DATASOURCE_PASSWORD : ${{ secrets.spring_datasource_password }}
+jobs:
+  deploy_to_heroku:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout src 
+      uses: actions/checkout@v2
+    - name: Deploy
+      uses: akhileshns/heroku-deploy@v3.12.12 
+      with:
+        heroku_api_key: ${{ secrets.heroku_api_key }}
+        heroku_app_name: issfoodapp
+        heroku_email: ${{ secrets.email }}
+        branch: ${{ github.release }}
