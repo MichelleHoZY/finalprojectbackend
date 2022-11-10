@@ -2,7 +2,6 @@ name: Deploy to Heroku
 on: [ "push" ]
 env: 
   RAPID_API_KEY: ${{ secrets.rapid_api_key }}
-  OM_API_KEY: ${{ secrets.om_api_key }}
   SPRING_DATASOURCE_PASSWORD: ${{ secrets.spring_datasource_password }}
   S3_ACCESS_KEY: ${{ secrets.s3_access_key }}
   S3_SECRET_KEY: ${{ secrets.s3_secret_key }}
