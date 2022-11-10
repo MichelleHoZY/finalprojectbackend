@@ -41,8 +41,8 @@ jobs:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}
       - name: Add Heroku remote
-        run: heroku git:remote --app issfoodapp
+        run: heroku git:remote --app issfoodappbackend
         env:
-          HEROKU_APP_NAME: issfoodapp
+          HEROKU_APP_NAME: issfoodappbackend
       - name: Push to Heroku
         run: git push heroku master
