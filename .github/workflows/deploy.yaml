@@ -16,5 +16,5 @@ jobs:
       with:
         heroku_api_key: ${{ secrets.heroku_api_key }}
         heroku_app_name: issfoodapp
-        heroku_email: ${{ secrets.email }}
+        heroku_email: ${{ secrets.heroku_email }}
         branch: ${{ github.release }}
