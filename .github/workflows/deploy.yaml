@@ -1,7 +1,5 @@
 name: Deploy to Heroku
-on: 
-  release:
-    types: [published]
+on: [ "push" ]
 jobs:
   deploy_to_heroku:
     runs-on: ubuntu-latest
