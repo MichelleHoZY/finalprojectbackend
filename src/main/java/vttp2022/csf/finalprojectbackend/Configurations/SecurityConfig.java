@@ -134,7 +134,7 @@ public class SecurityConfig {
                 .authenticationManager(authManager())
                 .addFilterBefore(getJWTAuthFilter(), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests( auth -> auth
-                        .antMatchers("/api/**").permitAll()//hasAnyRole("ADMIN", "USER")
+                        .antMatchers("/api/**").hasAnyRole("ADMIN", "USER")
                         .antMatchers("/admin/**").hasRole("ADMIN")
                         .antMatchers("/authorise/**").permitAll()
                         // .antMatchers("/createUser").permitAll()
